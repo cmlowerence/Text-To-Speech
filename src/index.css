@@ -1,0 +1,410 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+::placeholder{
+  color: hsla(var(--hue-theme), 70%, 50%, .5);
+}
+
+:root {
+  /* Colors */
+  --hue-pink: 320;
+  --hue-red: 0;
+  --hue-blue: 202;
+  --hue-purple: 262;
+  --hue-green: 135;
+  --hue-theme: var(--hue-pink);
+}
+
+.--hue_theme-pink {
+  color: hsl(263, 100%, 50%);
+  --hue-theme: var(--hue-pink);
+  /* Text colors */
+  --clr_heading-text: hsl(var(--hue-theme), 87%, 65%);
+  --clr_textarea-txt: hsl(var(--hue-theme), 80%, 55%);
+}
+
+.--hue_theme-red {
+  --hue-theme: var(--hue-red);
+  /* Text colors */
+  --clr_heading-text: hsl(var(--hue-theme), 87%, 65%);
+  --clr_textarea-txt: hsl(var(--hue-theme), 80%, 55%);
+}
+
+.--hue_theme-blue {
+  --hue-theme: var(--hue-blue);
+  /* Text colors */
+  --clr_heading-text: hsl(var(--hue-theme), 87%, 65%);
+  --clr_textarea-txt: hsl(var(--hue-theme), 80%, 55%);
+}
+
+.--hue_theme-purple {
+  --hue-theme: var(--hue-purple);
+  /* Text colors */
+  --clr_heading-text: hsl(var(--hue-theme), 87%, 65%);
+  --clr_textarea-txt: hsl(var(--hue-theme), 80%, 55%);
+}
+
+.--hue_theme-green {
+  --hue-theme: var(--hue-green);
+  /* Text colors */
+  --clr_heading-text: hsl(var(--hue-theme), 87%, 65%);
+  --clr_textarea-txt: hsl(var(--hue-theme), 80%, 55%);
+}
+
+/* Reusable classes Start */
+.hover__color-darken:hover {
+  transition: .25s ease-in-out;
+  color: hsl(var(--hue-theme), 84%, 50%);
+
+}
+
+.hover__color-darken:hover .menuButtonLine {
+  transition: .25s all ease-in-out;
+  background-color: hsl(var(--hue-theme), 84%, 50%) !important;
+}
+
+.simpleUL {
+  list-style: none;
+}
+
+/* Reusable classes End */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline-color: hsla(218, 51%, 39%, 0.819);
+}
+
+.flex {
+  display: flex;
+}
+
+.navbar {
+  background-color: hsla(var(--hue-theme, --hue-pink), 86%, 92%, .7);
+  display: flex;
+  width: 100%;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-nav {
+  width: 50%;
+  justify-content: start;
+  padding-inline-start: 1rem;
+  align-items: start;
+}
+
+button.menuToggle {
+  gap: .25rem;
+  flex-direction: column;
+  background-color: transparent;
+  border: none;
+  padding: .3rem;
+  cursor: pointer;
+}
+
+button:active {
+  transition: .2s ease-in-out;
+  transform: scale(.9);
+}
+
+.menuButtonLine {
+  width: 2rem;
+  height: 5px;
+  background-color: hsla(var(--hue-theme, --hue-pink), 84%, 67%);
+  border-radius: 5px;
+}
+
+.menuToggle.menu__open {
+  opacity: 0;
+  z-index: -1000;
+}
+
+/* NavBar Menu css */
+.navMenu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  background-color: hsla(var(--hue-theme, --hue-pink), 60%, 89%);
+  z-index: 10;
+}
+
+.closeMenuBtn {
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  z-index: 100;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.closeMenuBtn :nth-child(1) {
+  transform: translateY(50%) rotate(45deg);
+}
+
+.closeMenuBtn :nth-child(2) {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.menuContent {
+  font-family: 'Mukta', sans-serif;
+  font-size: 1.5rem;
+  color: hsl(var(--hue-theme, --hue-pink), 78%, 62%);
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4rem;
+  /* padding: .5rem; */
+}
+
+.menuContent ul {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  align-content: left;
+  width: 100%;
+}
+
+.menuContent ul li {
+  transition: .3s all ease-in-out;
+}
+
+.menuContent ul li a {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  cursor: pointer;
+  text-align: left;
+  gap: 1rem;
+  padding: .5rem;
+  justify-content: center;
+  align-items: center;
+  padding-inline-start: 3rem;
+  /* justify-items: center; */
+}
+
+.menuContent ul li:hover {
+  background-color: hsla(var(--hue-theme, --hue-pink), 60%, 51%, .4);
+  color: hsl(0, 80%, 99%);
+}
+
+.menuContent ul li .menuItem {
+  font-size: 1.6rem;
+  /* transform: translateY(-5px); */
+}
+
+.right-nav {
+  width: 50%;
+  justify-content: flex-end;
+  padding-inline-end: 1.5rem;
+  font-size: 1.3rem;
+  gap: 1rem;
+  color: hsl(var(--hue-theme, --hue-pink), 84%, 67%);
+  font-family: 'Mukta', sans-serif;
+}
+
+.icon,
+label {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Theme Menu CSS */
+.themes ul {
+  justify-content: flex-start;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.themes ul li {
+  aspect-ratio: 1;
+  width: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: inset 0 0 4px hsla(0, 0%, 0%, .2);
+  transition: .3s all ease-in-out;
+}
+
+.themes ul li:hover {
+  transform: scale(1.3);
+}
+
+.themes ul li:active {
+  transform: scale(.9);
+}
+
+.themes ul li#pink {
+  background-color: hsl(var(--hue-pink), 84%, 67%);
+  color: hsl(var(--hue-pink), 84%, 67%);
+}
+
+.themes ul li#purple {
+  background-color: hsl(var(--hue-purple), 99%, 63%);
+  color: hsl(var(--hue-purple), 99%, 63%);
+}
+
+.themes ul li#green {
+  background-color: hsl(var(--hue-green), 84%, 69%);
+  color: hsl(var(--hue-green), 84%, 69%);
+}
+
+.themes ul li#blue {
+  background-color: hsl(var(--hue-blue), 84%, 71%);
+  color: hsl(var(--hue-blue), 84%, 71%);
+}
+
+.themes ul li#red {
+  background-color: hsl(var(--hue-red), 75%, 81%);
+  color: hsl(var(--hue-red), 75%, 81%);
+}
+
+.navMenu .themes {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2rem;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  font-family: 'Mukta', sans-serif;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.navMenu .themes .themeTxt {
+  font-weight: 500;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  color: hsl(var(--hue-theme), 76%, 59%);
+}
+
+.navMenu .themes .themeColors {
+  width: 100%;
+  align-self: start;
+  border-radius: .5rem;
+  background-color: hsla(0, 100%, 99%, .4);
+}
+
+
+
+/* Main body css Start */
+main {
+  padding: 1rem;
+  padding-top: 2rem;
+  display: grid;
+  gap: 2rem;
+  font-family: 'Mukta', sans-serif;
+  place-items: center;
+}
+
+main .welcomeHeading {
+  font-family: 'Just Me Again Down Here', sans-serif;
+  color: var(--clr_heading-text);
+  font-size: 5rem;
+  font-weight: 400;
+}
+
+.contentContainer {
+  display: grid;
+  gap: 1rem;
+  width: 80%;
+  padding: .5rem;
+}
+
+.contentContainer span.contentTextarea {
+  overflow: hidden;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  outline: 1px solid hsl(var(--hue-theme), 76%, 59%);
+}
+
+span.contentTextarea:focus-within {
+  outline: 3px solid hsl(var(--hue-theme), 88%, 70%);
+}
+
+.contentContainer span.contentTextarea textarea {
+  font-family: 'Mukta', sans-serif;
+  width: calc(100% - 1rem);
+  height: calc(16.75rem - .8rem);
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  color: var(--clr_textarea-txt);
+  background-color: transparent;
+  resize: none;
+}
+
+.functionButtons {
+  place-self: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-block: 1rem;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.functionButtons >*{
+  padding-block: .5rem;
+  padding-inline: 1.5rem;
+  border-radius: .5rem;
+  font-family: 'Mukta', sans-serif;
+  border: none;
+  font-size: 1.125rem;
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+  color: hsl(var(--hue-theme), 80%, 40%);
+  background-color: hsl(var(--hue-theme), 50%, 85%);
+  outline-color: var(--clr_heading-text);
+  transition: .3s all ease-in-out;
+  cursor: pointer;
+}
+.functionButtons > label input{
+  visibility: hidden;
+  width: 0px;
+  position: absolute;
+  z-index: -10000;
+}
+
+.functionButtons > *:hover{
+  transform: scale(1.125);
+}
+.functionButtons > *:active{
+  transform : scale(.9);
+}
+.functionButtons  label:has(.file_selected){
+  background-color: hsl(131, 100%, 21%);
+  color: #fff;
+}
