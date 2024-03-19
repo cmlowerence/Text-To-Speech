@@ -327,8 +327,8 @@ main {
 main .welcomeHeading {
   font-family: 'Just Me Again Down Here', sans-serif;
   color: var(--clr_heading-text);
-  font-size: 5rem;
-  font-weight: 400;
+  font-size: 6rem;
+  font-weight: 500;
 }
 
 .contentContainer {
@@ -355,7 +355,8 @@ span.contentTextarea:focus-within {
 .contentContainer span.contentTextarea textarea {
   font-family: 'Mukta', sans-serif;
   width: calc(100% - 1rem);
-  height: calc(16.75rem - .8rem);
+  /* height: calc(16.75rem - .8rem); */
+  height: 7lh;
   font-size: 1.5rem;
   border: none;
   outline: none;
@@ -391,6 +392,9 @@ span.contentTextarea:focus-within {
   transition: .3s all ease-in-out;
   cursor: pointer;
 }
+/* .funcBtn-2.active{
+  background-color: hsla(120, 68%, 52%, 0.761) !important;
+} */
 .functionButtons > label input{
   visibility: hidden;
   width: 0px;
@@ -407,4 +411,15 @@ span.contentTextarea:focus-within {
 .functionButtons  label:has(.file_selected){
   background-color: hsl(131, 100%, 21%);
   color: #fff;
+}
+
+
+.functionButtons .speech-rate select{
+  padding-block: .25rem;
+  font-size: inherit;
+  outline: none;
+  color: hsl(var(--hue-theme), 80%, 40%);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
